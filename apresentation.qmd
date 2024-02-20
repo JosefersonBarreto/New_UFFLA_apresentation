@@ -6,6 +6,7 @@ author:
   - "<div style='position: absolute; right: 10px; bottom: 10px;'>Dr. Tiago Almeida, Universidade da Paraíba </div>"
 format:
   revealjs:
+    theme: serif
     multiplex: true
 slide-number: c/t #numero de ilides na apresentação
 incremental: true #mostra os slides aos poucos
@@ -14,6 +15,8 @@ title-slide-attributes:
 data-background-size: cover # "cover" imagem cobrir todo o titulo
 editor: visual
 bibliography: referencias/ref_apresentation.bib
+#bibliography-style: apa
+csl: www/ABNT_novo.csl
 nocite: '@*'
 ---
 
@@ -25,11 +28,11 @@ nocite: '@*'
 
 ## O que é o Quarto?
 
-"Quarto", que é uma versão multilíngue da próxima geração do R Markdown, ele é uma extensão ou alternativa ao R Markdown, foi desenvolvido com a intenção de oferecer recursos adicionais e uma abordagem mais simplificada para a criação de documentos em Markdown. Neste curso abordaremos as principais funcionalidades do pacote além de compara-lo ao Rmarkdown, explicando suas [~~possíveis~~]{.underline} vantagens e desvantagens.
+"Quarto", que é uma versão multilíngue da próxima geração do R Markdown, ele é uma extensão ou alternativa ao R Markdown, foi desenvolvido com a intenção de oferecer recursos adicionais e uma abordagem mais simplificada para a criação de documentos em Markdown. Neste curso abordaremos as principais funcionalidades do pacote além de compara-lo ao Rmarkdown, explicando suas possíveis vantagens e desvantagens.
 
 🥃 
 
-## Estruturas 
+## Estruturas
 
 Primeiramente vamos dar uma breve introdução a estrutura de um quarto document. O quarto document assim como Rmarkdowm possuem algumas peculiariedades em sua estrutura, a primeiras delas é o YAML.
 
@@ -37,15 +40,41 @@ Primeiramente vamos dar uma breve introdução a estrutura de um quarto document
 
 ![](images/clipboard-632724179.png)
 
-## YAML.
+## YAML
 
 YAML, que significa "YAML Ain't Markup Language" (YAML não é uma linguagem de marcação). O YAML é muitas vezes utilizado em configurações de aplicativos, arquivos de manifesto, definições de configuração e em situações onde a legibilidade é uma prioridade. Ele é especialmente popular em ambientes de desenvolvimento de software, DevOps e configuração de sistemas.
 
 # CSS
 
-CSS, ou Cascading Style Sheets (Folhas de Estilo em Cascata), é uma linguagem de estilo usada para descrever a apresentação de um documento escrito em uma linguagem de marcação, como HTML (Hypertext Markup Language). O CSS separa o conteúdo de um documento HTML da sua apresentação, permitindo que os desenvolvedores controlem o layout, as cores, as fontes e outros aspectos visuais de uma página da web.
+CSS, ou Cascading Style Sheets (Folhas de Estilo em Cascata), é uma linguagem de estilo usada para descrever a apresentação de um documento escrito em uma linguagem de marcação, como HTML (Hypertext Markup Language). O CSS é uma linguagem de marcação, funciona de forma a adicionar estilos e customizações e seus arquivos, ele separa o conteúdo de um documento HTML da sua apresentação, permitindo que os desenvolvedores controlem o layout, as cores, as fontes e outros aspectos visuais de uma página da web.
 
-## O que será abordado no Curso
+## CSS
+
+![](images/clipboard-1023669590.png){width="597" height="274"}
+
+Nesse exemplo, estamos em page header (cabeçalho ) adicionando a cor branca ao texto, centralizando o texto com **text-align**, definimos background color (cor de fundo) com um tom de azul. Além disso, passamos backgraound -image para adicionar o efeito de RGB na imagem de capa.
+
+## <font color= "purple"> CSS </font> {.maria style="color: purple;"}
+
+![](images/clipboard-1023669590.png){width="597" height="278"}
+
+No trecho seguinte em body( corpo do documento) passamos novamente a cor de corpo com um tom específico de azul.
+
+## CSS
+
+![](images/clipboard-1023669590.png){width="597" height="278"}
+
+### <font color= "red"> Observação </font>
+
+As melhores configurações e padrões de CSS vai depender muito do seu tipo de documento, por exemplo, ele pode ser um dashboard, ou uma pagina em HTML, cabe a você pesquisar e configurar os elementos a seu gosto.
+
+# Continuando
+
+# Continuando
+
+Agora que já vimos uma breve introdução aos elementos que compoem um arquivo Quarto básico, podemos prosseguuir com o nosso mini curso.
+
+# O que será abordado no Curso
 
 1.  criação de documentos
 
@@ -62,6 +91,8 @@ CSS, ou Cascading Style Sheets (Folhas de Estilo em Cascata), é uma linguagem d
 :::
 
 2.  Crie apresentações no Quarto
+
+# O que será abordado no Curso
 
 3.  publique seu documento quarto no github pages ou R Pubs
 
@@ -91,6 +122,16 @@ Faça o download dos arquivos necessários
 
 ```         
 ```
+
+# Passo 1: GITHUB no RStudio
+
+Para prosseguir será necessário configurar o github no RStudio para acesso e clonagem de repositórios de forma remota.
+
+# Mas o que é o GitHub?
+
+-   ::: incremental
+    O GitHub é uma plataforma de desenvolvimento colaborativo que aloja projetos na nuvem utilizando o sistema de controle de versões chamado Git. Geralmente o código é aberto, o que permite realizar projetos compartilhados e manter o acompanhamento detalhado de seu progresso. Texto disponível em: <https://ebaconline.com.br/blog/o-que-e-github>.
+    :::
 
 # Configurando o GITHUB no RStudio
 
