@@ -29,6 +29,22 @@ nocite: '@*'
 
 🥃 
 
+## Estruturas 
+
+Primeiramente vamos dar uma breve introdução a estrutura de um quarto document. O quarto document assim como Rmarkdowm possuem algumas peculiariedades em sua estrutura, a primeiras delas é o YAML.
+
+## YAML
+
+![](images/clipboard-632724179.png)
+
+## YAML.
+
+YAML, que significa "YAML Ain't Markup Language" (YAML não é uma linguagem de marcação). O YAML é muitas vezes utilizado em configurações de aplicativos, arquivos de manifesto, definições de configuração e em situações onde a legibilidade é uma prioridade. Ele é especialmente popular em ambientes de desenvolvimento de software, DevOps e configuração de sistemas.
+
+# CSS
+
+CSS, ou Cascading Style Sheets (Folhas de Estilo em Cascata), é uma linguagem de estilo usada para descrever a apresentação de um documento escrito em uma linguagem de marcação, como HTML (Hypertext Markup Language). O CSS separa o conteúdo de um documento HTML da sua apresentação, permitindo que os desenvolvedores controlem o layout, as cores, as fontes e outros aspectos visuais de uma página da web.
+
 ## O que será abordado no Curso
 
 1.  criação de documentos
@@ -67,11 +83,7 @@ Faça o download dos arquivos necessários
 
     ```
 
-
-
 # Arquivos Necessários para Uso do Quarto
-
-
 
 1.  **MiKTeX:** <https://miktex.org/download>
 
