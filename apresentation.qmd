@@ -32,6 +32,14 @@ nocite: '@*'
 
 🥃 
 
+## **Diferenças entre R Markdown e Quarto Document:**
+
+**1. Orientação:**
+
+-   **R Markdown:** Essencialmente para usuários de R, com foco em integração e análise de dados.
+
+-   **Quarto Document:** Mais abrangente, para diversos públicos, incluindo usuários de outras linguagens de programação.
+
 ## Estruturas
 
 Primeiramente vamos dar uma breve introdução a estrutura de um quarto document. O quarto document assim como Rmarkdowm possuem algumas peculiariedades em sua estrutura, a primeiras delas é o YAML.
