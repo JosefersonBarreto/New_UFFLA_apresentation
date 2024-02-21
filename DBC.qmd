@@ -7,7 +7,7 @@ format:
   html:
     theme:
       light: flatly
-      dark: darkly
+      #dark: darkly
   # titlepage-pdf:
   #   documentclass: scrbook
   #   classoption: ["oneside", "open=any"]
@@ -19,39 +19,58 @@ format:
   #   titlepage-bg-image: "img/corner-bg.png"
   #   titlepage-logo: "img/images.png"
 #editor: visual
+bibliography: references.bib
 ---
 
 <!-- ```{=html} -->
+
 <!-- <style> -->
+
 <!-- div.blue pre { background-color:lightblue; } -->
+
 <!-- div.blue pre.r { background-color:"#9ac7db"; } -->
+
 <!-- </style> -->
+
 <!-- ``` -->
+
 <!-- ::: blue -->
+
 <!-- <font color='black'> -->
 
 <!-- ```{css my-header-colors, echo = FALSE,eval=FALSE} -->
+
 <!-- .page-header { -->
+
 <!--      color: #fff; -->
+
 <!--   text-align: center; -->
+
 <!--   background-color: #9ac7db; -->
+
 <!--     background-image: linear-gradient(120deg, #11706f, #9ac7db); -->
+
 <!-- } -->
 
 <!-- body { -->
+
 <!--   /* background-color:rgb(192, 192, 192); */ -->
 
 <!-- } -->
 
 <!-- badCode { -->
-<!-- background-color: red; -->
-<!-- } -->
 
+<!-- background-color: red; -->
+
+<!-- } -->
 
 <!-- .list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover { -->
+
 <!--     background-color: purple; -->
+
 <!-- } -->
-<!-- ``` -->
+
+<!-- ``` -- -->
 
 ```{=html}
 <style>
@@ -161,7 +180,7 @@ Para esta análise será utilizado o pacote `ExpDes.pt` para obter a ANOVA e dem
 ```{r warning=FALSE, echo=FALSE, message=FALSE}
 library(readxl)
 library(dplyr)
-getwd()
+#getwd()
 library(knitr)
 #teste<-read.table("C:/Users/joseferson/Documents/joseferson barreto/projeto-final-planejamento2/psubDBC.txt")
  dados <- read_excel("dados.xlsx") 
@@ -266,7 +285,7 @@ $H_1$: A interação entre os tipos de rações e os horários de coleta do leit
 
 # <font color='black' face="Arial Black">Criando o nosso modelo</font>
 
-Para criar o nosso modelo vamos utlizar a função **aov()** do pacote Stats, em sequência , utilizaremos o comando **Summary** para montagem do quadro da váriancia , popurlamente conhecido como quadro da Anova .
+Para criar o nosso modelo vamos utlizar a função **aov()** do pacote **Stats**, em sequência, utilizaremos o comando **Summary** para montagem do quadro da variância, popurlamente conhecido como quadro da Anova .
 
 ### <font color='black' face="Arial Black"> hipóteses da Anova </font>
 
@@ -299,7 +318,7 @@ summary(dados.avb)
 
 ```
 
-Podemos Observar Que o fator Turno deu significativo logo pelo menos um dos tipos de ração diferentes entre si.
+Podemos Observar que o fator Turno deu significativo logo pelo menos um dos tipos de ração diferentes entre si.
 
 ```{r}
 par(bg = '#9ac7db')
@@ -307,9 +326,9 @@ par(mfrow=c(2,2))
 plot(dados.avb)
 ```
 
-Os resíduos pelo os valores previstos , ele nos permite observar tanto a linearidade quanto a homocedasticidade , mas como verificamos se de fato o modelo é linear ? nos conseguimos a resposta olhando a linha vermelha traçada nesse primeiro gráfico(**Residuals Vs Fited**) , caso a linha vermelha esteja aparentimente horizontal então temos a linearidade , logo , em osso caso esse presuposto foi atendido. Outro ponto a se observar nesse gráfico é a homocedasticidade que nada mais é que a homogenidade das variâncias , caso exista homogenacidade nos dados veremos a dispersão dos pontos de forma aproximadamente constante ao longo dos valores previstos de Y(que está no eixo X),ou seja , teriamos uma dispersão aproximadamente regular em forma de retângulo ao longo do gráfico ,perceba que esse é o nosso caso.Caso não exitesse homogenidade nos dados os valores formariam uma espécie de triângulo no gráfico.
+Os resíduos pelo os valores previstos , ele nos permite observar tanto a linearidade quanto a homocedasticidade , mas como verificamos se de fato o modelo é linear ? nos conseguimos a resposta olhando a linha vermelha traçada nesse primeiro gráfico(**Residuals Vs Fited**) , caso a linha vermelha esteja aparentimente horizontal então temos a linearidade, logo, em osso caso esse presuposto foi atendido. Outro ponto a se observar nesse gráfico é a homocedasticidade que nada mais é que a homogenidade das variâncias, caso exista homogenacidade nos dados veremos a dispersão dos pontos de forma aproximadamente constante ao longo dos valores previstos de Y(que está no eixo X), ou seja, teriamos uma dispersão aproximadamente regular em forma de retângulo ao longo do gráfico, perceba que esse é o nosso caso. Caso não exitesse homogenidade nos dados os valores formariam uma espécie de triângulo no gráfico.
 
-**normal QQ=** é o gráfico que nos permite ver sé os resíduos seguem distribuição normal , onde no eixo Y estão os resíduois padronizados e no eixo X os resíduos teóricos que seriam os resíduos esperados caso a distribuição fosse normal , para que os nosssos dados siga uma distruição normal , os valores devem estar em cima da linha pontilhada , embora nem todos estejam em cima da linha , podemos considerar que está apróximadamente normal, caso não fosse atendido , estes pontos aprensentaria um formato de curva .
+**normal QQ=** é o gráfico que nos permite ver sé os resíduos seguem distribuição normal, onde no eixo Y estão os resíduois padronizados e no eixo X os resíduos teóricos que seriam os resíduos esperados caso a distribuição fosse normal, para que os nosssos dados siga uma distruição normal, os valores devem estar em cima da linha pontilhada, embora nem todos estejam em cima da linha, podemos considerar que está apróximadamente normal, caso não fosse atendido, estes pontos aprensentaria um formato de curva .
 
 **Scale_Location =** é o gráfico mais recomendado para ver a homogenacidade , caso exista homogenacidade a linha vermelha deve estar aproximadamente horizontal , que é nosso casso
 
@@ -317,7 +336,7 @@ Os resíduos pelo os valores previstos , ele nos permite observar tanto a linear
 
 ### <font color='black' face="Arial Black">Teste de normalidade dos residuos ( Shapiro-Wilk ) </font>
 
-Vamos começar analisando o resultado do teste de normalidade de resíduos(Shapiro-Wilk)
+Vamos começar analisando o resultado do teste de normalidade de resíduos (Shapiro-Wilk)
 
 ## <font color='black' face="Arial Black">hipóteses:</font>
 
@@ -330,7 +349,7 @@ shapiro.test(dados.avb$residuals)
 
 ```
 
-Como o $P_{valor}< 0,05$ , rejeita-se a hipótese nula . Nesse sentido , temos que não existe normalidade nos resíduos.
+Como o $P_{valor}< 0,05$ , rejeita-se a hipótese nula . Nesse sentido, temos que não existe normalidade nos resíduos.
 
 ```{r message=FALSE, warning=FALSE, echo=FALSE}
 par(mfrow=c(1,3))
@@ -342,7 +361,7 @@ car::Boxplot(dados.avb$residuals~tipos_rações:turno, xlab=c("dia","tarde"))
 
 ```
 
-Aqui temos a comparação das médias, perceba que quando olhamos os fatores individualmente os dados não apresentam valores extremos(outliers), isso muda quando passamos analisar a interação entre eles(ultimo gráfico).
+Aqui temos a comparação das médias, perceba que quando olhamos os fatores individualmente os dados não apresentam valores extremos(outliers), isso muda quando passamos analisar a interação entre eles(último gráfico).
 
 # <font color='black' face="Arial Black">Analisando o resultado do teste de homogenidade(bartlett) </font>
 
@@ -361,7 +380,7 @@ De acordo com o teste de bartlett a 5% de significância, não rejeita-se a hip�
 
 ### <font color='black' face="Arial Black"> Análise utilizando o pacote `ExpDes.pt` </font>
 
-Para realiza o dbC(**O delineamento em blocos casualizado** ) vamos utilizar a função **psub2.dbc** da biblioteca **ExpDes.pt** onde **tipos_rações** é os tipos de rações , e **turno** é os os turnos do dia em que ocorreram coleta do leite,**blocos** são as repetições do experimento ,**prod** são os valores observados **mcomp=** com o argumento "Tukey" para observar qual a fator teve um melhor desempenho na produção do leite **psub2.dbc** considera o nível de significancia de 0,05% para a execução do teste .
+Para realiza o dbC(**O delineamento em blocos casualizado** ) vamos utilizar a função **psub2.dbc** da biblioteca **ExpDes.pt** onde **tipos_rações** é os tipos de rações , e **turno** é os os turnos do dia em que ocorreram coleta do leite, **blocos** são as repetições do experimento, **prod** são os valores observados **mcomp=** com o argumento "Tukey" para observar qual a fator teve um melhor desempenho na produção do leite, **psub2.dbc** considera o nível de significancia de 0,05% para a execução do teste .
 
 ```{r message=FALSE, warning=FALSE}
 require(ExpDes.pt)
@@ -369,7 +388,7 @@ psub2.dbc(tipos_rações, turno, blocos, prod, quali = c(TRUE, TRUE),mcomp = "tu
           fac.names = c("rações", "turno"), sigF = 0.05)
 ```
 
-# <font color='black' face="Arial Black"> Comparação de media para turno </font>
+# <font color='black' face="Arial Black"> Comparação das médias para turno </font>
 
 ```{r message=FALSE, warning=FALSE}
 library(DT)
@@ -380,9 +399,9 @@ media_t<-read_excel("media_turno.xlsx")
 media_t %>%datatable()
 ```
 
-segundo o teste F as medias dos niveis do fator Turno foram iguais,como não temos diferença significativa pelo teste f,logo ,as medias dos níveis do fator são estatisticamente iguais
+segundo o teste F as médias dos níveis do fator Turno foram iguais,como não temos diferença significativa pelo teste f,logo ,as médias dos níveis do fator são estatisticamente iguais.
 
-# <font color='black' face="Arial Black"> Comparação de media para raçãoes </font>
+# <font color='black' face="Arial Black"> Comparação das médias para raçãoes </font>
 
 ```{r message=FALSE, warning=FALSE}
 library(DT)
@@ -393,11 +412,11 @@ media_R<-read_excel("media_rações.xlsx")
 media_R %>%datatable()
 ```
 
-podemos perceber que temos diferenças nos níveis do fator tipo de rações pelo teste F, logo , pelo o teste de tukey(comparação de médias) temos que soja e pasta bovina apresentaram os melhores resultados
+podemos perceber que temos diferenças nos níveis do fator tipo de rações pelo teste F, logo, pelo o teste de tukey(comparação de médias) temos que soja e pasta bovina apresentaram os melhores resultados.
 
 # <font color='black' face="Arial Black"> Conclusão </font>
 
-Pela análise de Variâncias as interações entre os fatores não foram significativas , assim como o fator turno(horário da coleta do leite ) também não foi significativo na produção,apenas o fator ração foi de fato significativo na produção, tendo a pasta bovina e a soja o mesmo efeito na produção do leite .
+Pela análise de variâncias as interações entre os fatores não foram significativas , assim como o fator turno(horário da coleta do leite ) também não foi significativo na produção,apenas o fator ração foi de fato significativo na produção, tendo a pasta bovina e a soja o mesmo efeito na produção do leite .
 
 # <font color='black' face="Arial Black"> Referências </font>
 
@@ -436,6 +455,7 @@ Relatório sobre os testes paramétricos e não paramétricos :
 <!--   /> -->
 
 <!-- </a>  -->
+
 <!-- ::: -->
 
 </font>
