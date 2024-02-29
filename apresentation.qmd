@@ -2,13 +2,14 @@
 title: |
   <font color='#334b61' size='18' face='sans-serif' style='text-shadow: 2px 2px #931717;'>Curso Avançado de Quarto Potencializando a Documentação Científica com Inovação e Simplicidade📚📓📓📊📈</font>
 author:
-  - "<div style='position: absolute; left: 10px; bottom: 10px;'>Joseferson Barreto, <br /> Graduado pela Universidade da Paraíba </div>"
-  - "<div style='position: absolute; right: 10px; bottom: 10px;'>Dr. Tiago Almeida, Universidade da Paraíba </div>"
+  - "<div style='position: absolute; left: 10px; bottom: 10px;'>Joseferson Barreto, <br /> Graduado pela  Estadual Universidade da Paraíba </div>"
+  - "<div style='position: absolute; right: 10px; bottom: 10px;'>Dr. Tiago Almeida, Universidade Estadual  da Paraíba </div>"
 format:
   revealjs:
     theme: serif
+    #theme: [default, custom.scss]
     multiplex: true
-slide-number: c/t #numero de ilides na apresentação
+slide-number: c/t #numero de slides na apresentação
 incremental: true #mostra os slides aos poucos
 title-slide-attributes:
  data-background-image: template/template.jpeg
@@ -18,6 +19,7 @@ bibliography: referencias/ref_apresentation.bib
 #bibliography-style: apa
 csl: www/ABNT_novo.csl
 nocite: '@*'
+css: meu-tema.css
 ---
 
 ```{CSS}
@@ -26,12 +28,31 @@ nocite: '@*'
 .reveal .quarto-title-block .quarto-title-authors .quarto-title-author .quarto-title-author-name.right { position: absolute; right: 10px; /* Ajuste conforme necessário / bottom: 10px; / Ajuste conforme necessário */ }
 ```
 
+## Mais Informações {.column background-color="#fff"}
+
+::: nonincremental
+::: columns
+::: {.column width="60%"}
+-   Contato
+
+    -   LinkedIn: [joseferson-barreto/](https://www.linkedin.com/in/joseferson-barreto/){.uri}
+
+    -   Blog: [josefersonbarreto](https://josefersonbarreto.github.io/portifolio/){.uri}
+:::
+
+::: {.column width="40%"}
+![](images/imagem.png){.ilustration}
+:::
+:::
+:::
+
 ## O que é o Quarto?
 
 "Quarto", que é uma versão multilíngue da próxima geração do R Markdown, ele é uma extensão ou alternativa ao R Markdown, foi desenvolvido com a intenção de oferecer recursos adicionais e uma abordagem mais simplificada para a criação de documentos em Markdown. Neste curso abordaremos as principais funcionalidades do pacote além de compara-lo ao Rmarkdown, explicando suas possíveis vantagens e desvantagens.
 
-🥃 
+🥃 😄
 
+::: {.page-container style="background-image: url('images/goku.png');       background-size: 500px;       background-position:right 34px top 50px;       background-repeat: no-repeat;       padding-right: 350px;"}
 ## **Diferenças entre R Markdown e Quarto Document:**
 
 **1. Orientação:**
@@ -39,12 +60,13 @@ nocite: '@*'
 -   **R Markdown:** Essencialmente para usuários de R, com foco em integração e análise de dados.
 
 -   **Quarto Document:** Mais abrangente, para diversos públicos, incluindo usuários de outras linguagens de programação.
+:::
 
 ## Estruturas
 
 Primeiramente vamos dar uma breve introdução a estrutura de um quarto document. O quarto document assim como Rmarkdowm possuem algumas peculiariedades em sua estrutura, a primeiras delas é o YAML.
 
-## YAML
+## YAML {background-color="#447099"}
 
 ![](images/clipboard-632724179.png)
 
@@ -58,15 +80,15 @@ CSS, ou Cascading Style Sheets (Folhas de Estilo em Cascata), é uma linguagem d
 
 ## CSS
 
-![](images/clipboard-1023669590.png){width="597" height="274"}
+![](images/clipboard-1023669590.png){.css_imagem width="597" height="274"}
 
 Nesse exemplo, estamos em page header (cabeçalho ) adicionando a cor branca ao texto, centralizando o texto com **text-align**, definimos background color (cor de fundo) com um tom de azul. Além disso, passamos backgraound -image para adicionar o efeito de RGB na imagem de capa.
 
-## <font color= "purple"> CSS </font> {.maria style="color: purple;"}
+## CSS {.maria}
 
-![](images/clipboard-1023669590.png){width="597" height="278"}
+![](images/clipboard-1023669590.png){#.css_imagem .css_imagem width="597" height="278"}
 
-No trecho seguinte em body( corpo do documento) passamos novamente a cor de corpo com um tom específico de azul.
+<font  face ="arial black" color= "purple"> No trecho seguinte em body( corpo do documento) passamos novamente a cor de corpo com um tom específico de azul. </font>
 
 ## CSS
 
@@ -74,13 +96,89 @@ No trecho seguinte em body( corpo do documento) passamos novamente a cor de corp
 
 ### <font color= "red"> Observação </font>
 
-As melhores configurações e padrões de CSS vai depender muito do seu tipo de documento, por exemplo, ele pode ser um dashboard, ou uma pagina em HTML, cabe a você pesquisar e configurar os elementos a seu gosto.
+As melhores configurações e padrões de CSS vai depender muito do seu tipo de documento, por exemplo, ele pode ser um dashboard, ou uma página em HTML, cabe a você pesquisar e configurar os elementos a seu gosto.
+
+# Outras Opções de Customizações
+
+## Indique diretamente o código fonte
+
+``` yaml
+format:
+  html: 
+    code-tools:
+      source: https://github.com/quarto-dev/quarto-web/blob/main/trademark.qmd
+```
+
+## Mudar a Aparência do código
+
+```{r}
+#| message: false
+library(dplyr)
+mtcars |> 
+  group_by(cyl, am) |> 
+  summarize(mean = mean(mpg), n = n(), .groups = "drop")
+```
+
+## Destacando o código
+
+``` yaml
+format: 
+  html:
+    highlight-style: arrow
+```
+
+![](https://quarto.org/docs/output-formats/images/arrow.png){.nostretch width="50%" fig-alt="Screenshot of code with a light theme on white background"}
+
+[todas as opções](https://quarto.org/docs/output-formats/html-code.html#highlighting)
+
+## Temas
+
+Outras opções interesantes de configuração que o quarto documente oferece , assim como Rmarkdown são os temas , com eles você pode adicionar estilos ao seu documento sem a necessidade de configurar um css.
+
+``` yaml
+format: 
+  html:
+    highlight-style: arrow
+    theme:
+      light: flatly
+      dark: darkly
+```
+
+## Temas
+
+. . .
+
+![](https://quarto.org/docs/output-formats/images/html-dark.png){fig-alt="Screenshot of dark mode toggle in Quarto doc."}
+
+. . .
+
+## Temas
+
+Existem uma grande variedades de temas que pode ser utilizados, veja algums exemplos:
+
+![](images/bootswatch-01.png){.temas style="text-align: center;"}
+
+## Importando Configurações .tex
+
+```{r,echo=TRUE,eval=FALSE}
+format:
+  pdf:
+    template: mytemplate.tex
+```
+
+-   Carregue seus templates criados no Latex ou no overleaf.
+
+## Visual
+
+![](images/visual.png){#fig-visual}
+
+Na @fig-visual, Podemos observar a aparência do quarto document no ambiente do RStudio.
 
 # Continuando
 
 # Continuando
 
-Agora que já vimos uma breve introdução aos elementos que compoem um arquivo Quarto básico, podemos prosseguuir com o nosso mini curso.
+Agora que já vimos uma breve introdutivo aos elementos que compoem um arquivo Quarto básico, podemos prosseguuir com o nosso mini curso.
 
 # O que será abordado no Curso
 
@@ -117,10 +215,6 @@ Faça o download dos arquivos necessários
 2.  baixe o **R** : <https://cran.rstudio.com/bin/windows/>
 
 3.  **GIT Bash**: <https://git-scm.com/download/win>
-
-    ```{r}
-
-    ```
 
 # Arquivos Necessários para Uso do Quarto
 
