@@ -1,0 +1,37 @@
+.slide-logo {
+  display: block !important;
+  position: fixed !important;
+  top: 0 !important;
+  right: 10px !important;
+  max-height: 15% !important;
+  height: 100% !important;
+  width: auto !important;
+  color: $body-color !important;
+}
+
+.slide-number, .reveal.has-logo .slide-number {
+  bottom: 10px !important;
+  right: 0 !important;
+  top: unset !important;
+  color: $body-color !important;
+}
+
+
+.ilustration {
+    max-width: 70%; !important;
+    max-height: 95%; !important;
+    position: absolute; !important;
+}
+
+
+reveal .slide-background-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
